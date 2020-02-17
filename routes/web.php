@@ -134,7 +134,7 @@ Route::name('frontend.')
 Route::prefix('admin')
     ->name('backend.')
     ->namespace('Backend')
-    ->middleware('auth', 'active', 'email_verified', '2fa', 'role:' . App\Models\User::ROLE_ADMIN)
+    ->middleware('auth', 'email_verified', '2fa', 'role:' . App\Models\User::ROLE_ADMIN)
     ->group(function () {
         // admin dashoard
         Route::get('dashboard', 'DashboardController@index')->name('dashboard.index');
